@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         var userController = WKUserContentController()
         userController.addUserScript(script)
         // Add a script message handler for receiving  "buttonClicked" event notifications posted from the JS document using window.webkit.messageHandlers.buttonClicked.postMessage script message
-        userController.add(self, name: "app_go_back")
+        userController.add(self, name: "nativeProcess")
         // Configure the WKWebViewConfiguration instance with the WKUserContentController
         webCfg.userContentController = userController;
 
@@ -44,10 +44,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Experimental HTML"
         self.view.addSubview(webView)
-        let urlToLoad = URL(string: "http://192.168.33.240:8080/app/app-msg/a")!
-        // Do any additional setup after loading the view.
-        webView.load(URLRequest(url: urlToLoad
-        ))
+        if let urlToLoad = Bundle.main.url(forResource: "0", withExtension: "html"){
+            webView.load(URLRequest(url: urlToLoad))
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
