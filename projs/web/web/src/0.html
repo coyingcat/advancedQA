@@ -13,8 +13,10 @@
         }
 
         function sendToNative(message) {
-            var native = window.webkit.messageHandlers.nativeProcess
-            native.postMessage(message)
+            if (window.webkit){
+                var native = window.webkit.messageHandlers["nativeProcess"]
+                native.postMessage(message)
+            }
         }
 
         function sendMessage() {
