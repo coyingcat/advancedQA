@@ -55,7 +55,10 @@ class ViewController: UIViewController {
 
     func fetchRandomUserProfile(guid: String) {
         //https://randomuser.me/api
-        let request = NSMutableURLRequest(url: URL(string: "https://randomuser.me/api") as! URL,
+        guard let url = URL(string: "https://randomuser.me/api") else{
+            return
+        }
+        let request = NSMutableURLRequest(url: url,
             cachePolicy: .useProtocolCachePolicy,
             timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -66,10 +69,11 @@ class ViewController: UIViewController {
                 print(e)
             } else {
                 let httpResponse = response as? HTTPURLResponse
-                let theString = String(data: data!, encoding: .utf8)
-                print(theString)
-                DispatchQueue.main.async {
-                    self.executeCallBack(guid: guid, data: theString!)
+                if let theString = String(data: data!, encoding: .utf8){
+                    print(theString)
+                    DispatchQueue.main.async {
+                        self.executeCallBack(guid: guid, data: theString)
+                    }
                 }
 
             }
