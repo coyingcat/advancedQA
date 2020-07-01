@@ -18,12 +18,19 @@ class ViewController: UIViewController {
     var webView: WKWebView = {
         let webCfg: WKWebViewConfiguration = WKWebViewConfiguration()
 
-
+        webCfg.preferences = WKPreferences()
+        webCfg.preferences.javaScriptEnabled = true
+        let source = "var meta = document.createElement('meta');" +
+                     "meta.name = 'viewport';" +
+                     "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
+                     "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);"
+        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        
         // Setup WKUserContentController instance for injecting user script
-        var userController: WKUserContentController = WKUserContentController()
-
+        var userController = WKUserContentController()
+        userController.addUserScript(script)
         // Add a script message handler for receiving  "buttonClicked" event notifications posted from the JS document using window.webkit.messageHandlers.buttonClicked.postMessage script message
-        userController.add(self, name: "nativeProcess")
+        userController.add(self, name: "app_go_back")
         // Configure the WKWebViewConfiguration instance with the WKUserContentController
         webCfg.userContentController = userController;
 
@@ -37,9 +44,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Experimental HTML"
         self.view.addSubview(webView)
-        let urlToLoad = Bundle.main.url(forResource: "0", withExtension: "html")
+        let urlToLoad = URL(string: "http://192.168.33.240:8080/app/app-msg/a")!
         // Do any additional setup after loading the view.
-        webView.load(URLRequest(url: urlToLoad!))
+        webView.load(URLRequest(url: urlToLoad
+        ))
     }
 
     override func didReceiveMemoryWarning() {
