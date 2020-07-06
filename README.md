@@ -27,3 +27,7 @@ iOS 面试题解答
 碰撞效果，
 
 输赢情况
+
+
+
+[1 砍绳子: How To Make a Game Like Cut the Rope With SpriteKit](https://www.raywenderlich.com/5347797-how-to-make-a-game-like-cut-the-rope-with-spritekit)
