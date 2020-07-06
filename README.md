@@ -22,3 +22,8 @@ iOS 面试题解答
 ### 游戏开发:
 
 [0 忍者：SpriteKit Tutorial for Beginners](https://www.raywenderlich.com/71-spritekit-tutorial-for-beginners#toc-anchor-007)
+
+
+碰撞效果，
+
+输赢情况
