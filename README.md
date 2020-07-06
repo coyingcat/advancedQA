@@ -27,6 +27,12 @@ iOS 面试题解答
 [ block 内如何修改 block 外部变量？](https://mp.weixin.qq.com/s/VFzTBCiFcbPHqWAnsDtT4A)
 
 
+"将 auto 变量, 从栈 copy 到堆"
+
+
+“将 auto 变量, 封装为结构体(对象)”
+
+
 
 ### 游戏开发:
 
