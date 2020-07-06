@@ -18,6 +18,15 @@ iOS 面试题解答
 * [好题目 iTeaTime(技术清谈)](https://github.com/iteatimeteam/Friday-QA)
 
 
+## 习题解答：
+
+
+### Objective-C:
+
+
+[ block 内如何修改 block 外部变量？](https://mp.weixin.qq.com/s/VFzTBCiFcbPHqWAnsDtT4A)
+
+
 
 ### 游戏开发:
 
