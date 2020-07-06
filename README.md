@@ -31,3 +31,8 @@ iOS 面试题解答
 
 
 [1 砍绳子: How To Make a Game Like Cut the Rope With SpriteKit](https://www.raywenderlich.com/5347797-how-to-make-a-game-like-cut-the-rope-with-spritekit)
+
+
+绳索摆动，
+重力牵引，
+糖果翻滚
