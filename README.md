@@ -16,3 +16,9 @@ iOS 面试题解答
 
 
 * [好题目 iTeaTime(技术清谈)](https://github.com/iteatimeteam/Friday-QA)
+
+
+
+### 游戏开发:
+
+[0 忍者：SpriteKit Tutorial for Beginners](https://www.raywenderlich.com/71-spritekit-tutorial-for-beginners#toc-anchor-007)
